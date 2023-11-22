@@ -3,25 +3,25 @@ This repository describes how to combine OligoMiner and OligoLego to design olig
 
 ## Homology design - OligoMiner
 1. Select region(s) of interest. In the UCSC Genome Browser, go to View -> DNA and introduce the desired region. If possible, use hard-masked sequences (repetitive regions masked by Ns). This will depend on the labelling density after OligoMiner design. The sequences are in FASTA file and should be saved in a text file with .fasta extension.
-2. Use the OligoMiner to design the homology region of the probes. http://oligominerapp.org. For individual probes, go to Input-Single and upload the .fasta file. Tune the parameters as required and run analysis.
-3. When done, download the .csv file corresponding to the RESULTS – Probes Set and RESULTS- Experimental Parameters for future reference.
+2. Use the OligoMiner to design the homology region of the probes. http://oligominerapp.org. For individual probes, go to Input-Single and upload the `.fasta file`. Tune the parameters as required and run analysis.
+3. When done, download the `.csv file` corresponding to the RESULTS – Probes Set and RESULTS- Experimental Parameters for future reference.
 
 ## Mainstreet and backstreet assembly - OligoLego
-1. Download the OligoLego repository from GitHub: https://github.com/gnir/OligoLego. Follow the indications for installation in the README.md file, namely:
-- Add appending folder to MATLAB startup.m file. The startup.m file should be in C:\Users\$username\MATLAB. To check the exact path open MATLAB and type userpath in the command line.
-- If the file is not present, copy the AppendingStartup.m in the location described above, then change its name to startup.m. Then, modify the path location to that where the Appending filder from the GitHub repository is located.
+1. Download the OligoLego repository from GitHub: https://github.com/gnir/OligoLego. Follow the indications for installation in the `README.md` file, namely:
+- Add appending folder to MATLAB `startup.m` file. The startup.m file should be in C:\Users\$username\MATLAB. To check the exact path open MATLAB and type userpath in the command line.
+- If the file is not present, copy the `AppendingStartup.m` in the location described above, then change its name to `startup.m`. Then, modify the path location to that where the Appending filder from the GitHub repository is located.
 
 2. Design intersected text files for MS and BS containing homology regions. There are three possibilities of design requiring different combinations of intersected text files.
 
 ![image](https://github.com/CosmaLab/OligoPaint_design/assets/93983592/c3024e5f-a448-4e56-a7b3-917871a4e8a9)
 
-- Case 1: MS contains a universal primer and a locus-specific primer, as well as the street for the labelled secondary probe. BS only contains universal primer, so cannot be used for imaging / barcoding.
+  - Case 1: MS contains a universal primer and a locus-specific primer, as well as the street for the labelled secondary probe. BS only contains universal primer, so cannot be used for imaging / barcoding.
 
-- Case 2: MS and BS contain locus-specific primers and streets. These can be used for further barcoding or for stronger signal if the same sequences are added in the MS and BS.
+  - Case 2: MS and BS contain locus-specific primers and streets. These can be used for further barcoding or for stronger signal if the same sequences are added in the MS and BS.
 
-- Case 3: like case 2, also including a toehold sequence to allow sequential hybridization imaging.
+  - Case 3: like case 2, also including a toehold sequence to allow sequential hybridization imaging.
 
-The intersected files (Main_isected.txt and Back_isected.txt) are BED-like files containing 9 tab-separated columns, corresponding to information in the .csv derived using OligoMiner:
+The intersected files (`Main_isected.txt` and `Back_isected.txt`) are BED-like files containing 9 tab-separated columns, corresponding to information in the .csv derived using OligoMiner:
 
 chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7180812&nbsp;&nbsp;&nbsp;&nbsp;7180851&nbsp;&nbsp;&nbsp;&nbsp;AACTCATGACTTGGATATCGTTACCAAGTGGAGGAAATGG&nbsp;&nbsp;&nbsp;&nbsp;42.06
 
@@ -49,7 +49,7 @@ chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&
 
 - Col 9:	Tm of each probe (Tm column in OligoMiner output.csv).
 
-This step can be directly done using the custom script OligoMiner_to_OligoLego.m, and specifying the OligoMiner output as well as the characteristics of the region in the Custom inputs section.
+This step can be directly done using the custom script `OligoMiner_to_OligoLego.m`, and specifying the OligoMiner output as well as the characteristics of the region in the Custom inputs section.
 
 3. Get streets pool, in this case already available in Streets folder.
 
@@ -75,14 +75,14 @@ SameUniversal flags the usage of universal primers to amplify an entire library 
 Sequences to order can be extracted from output of OligoLego as follows:
 
 Sequences to order can be extracted from output of OligoLego as follows:
-1. Oligopaints.txt: Entire oligopaints library.
-2. MS_IDs.txt:
+1. `Oligopaints.txt`: Entire oligopaints library.
+2. `MS_IDs.txt`:
 •	6th column: Forward primer
 •	4th / 5th column: Identical in cases #1 and #2. This is the secondary oligo to order, add fluorescent labeled if required.
-3.  BS_IDs.txt:
+3.  `BS_IDs.txt`:
 •	6th column: Reverse primer
 •	Remaining columns relevant if more complicate designs for the library are desired.
-4. Universal.txt:
+4. `Universal.txt`:
 •	2nd column: Forward universal primer.
 •	4th column: Reverse universal primer.
 
