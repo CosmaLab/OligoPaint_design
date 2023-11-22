@@ -23,13 +23,12 @@ This repository describes how to combine OligoMiner and OligoLego to design olig
 
 The intersected files (`Main_isected.txt` and `Back_isected.txt`) are BED-like files containing 9 tab-separated columns, corresponding to information in the `.csv` derived using OligoMiner:
 
-chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7180812&nbsp;&nbsp;&nbsp;&nbsp;7180851&nbsp;&nbsp;&nbsp;&nbsp;AACTCATGACTTGGATATCGTTACCAAGTGGAGGAAATGG&nbsp;&nbsp;&nbsp;&nbsp;42.06
-
-chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7181016&nbsp;&nbsp;&nbsp;&nbsp;7181056&nbsp;&nbsp;&nbsp;&nbsp;AAACTTGACTTACCTGAGTCAGTAAATTTGCCTTGCAGAGA&nbsp;&nbsp;&nbsp;&nbsp;42.13
-
-chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7181272&nbsp;&nbsp;&nbsp;&nbsp;7181306&nbsp;&nbsp;&nbsp;&nbsp;ACCATTGCTGATCACCACTGTTGTAGACCTGCTGC&nbsp;&nbsp;&nbsp;&nbsp;44.58
-
-chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7181641&nbsp;&nbsp;&nbsp;&nbsp;7181675&nbsp;&nbsp;&nbsp;&nbsp;ACCAGTAAGATTTGGTGGCCTATACGGGGATTCTC&nbsp;&nbsp;&nbsp;&nbsp;42.07
+| Col 1 | Col 2 | Col 3 | Col 4 | Col 5 | Col 6 | Col 7 | Col 8 | Col 9 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| chr12 | 7180500 | 7214499 | region1_PEX5 | chr12 | 7180812 | 7180851 | AACTCATGACTTGGATATCGTTACCAAGTGGAGGAAATGG | 42.06
+| chr12 | 7180500 | 7214499 | region1_PEX5 | chr12 | 7181016 | 7181056 | AAACTTGACTTACCTGAGTCAGTAAATTTGCCTTGCAGAGA | 42.13
+| chr12 | 7180500 | 7214499 | region1_PEX5 | chr12 | 7181272 | 7181306 | ACCATTGCTGATCACCACTGTTGTAGACCTGCTGC | 44.58
+| chr12 | 7180500 | 7214499 | region1_PEX5 | chr12 | 7181641 | 7181675 | ACCAGTAAGATTTGGTGGCCTATACGGGGATTCTC | 42.07
 
 - Col 1:	Chromosome where locus is located.
 
