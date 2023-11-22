@@ -11,7 +11,7 @@ This repository describes how to combine OligoMiner and OligoLego to design olig
 - Add appending folder to MATLAB `startup.m` file. The startup.m file should be in C:\Users\$username\MATLAB. To check the exact path open MATLAB and type userpath in the command line.
 - If the file is not present, copy the `AppendingStartup.m` in the location described above, then change its name to `startup.m`. Then, modify the path location to that where the Appending filder from the GitHub repository is located.
 
-2. Design intersected text files for MS and BS containing homology regions. There are three possibilities of design requiring different combinations of intersected text files.
+2. Design intersected `.txt` files for MS and BS containing homology regions. There are three possibilities of design requiring different combinations of intersected text files.
 
 ![image](https://github.com/CosmaLab/OligoPaint_design/assets/93983592/c3024e5f-a448-4e56-a7b3-917871a4e8a9)
 
@@ -21,7 +21,7 @@ This repository describes how to combine OligoMiner and OligoLego to design olig
 
   - Case 3: like case 2, also including a toehold sequence to allow sequential hybridization imaging.
 
-The intersected files (`Main_isected.txt` and `Back_isected.txt`) are BED-like files containing 9 tab-separated columns, corresponding to information in the .csv derived using OligoMiner:
+The intersected files (`Main_isected.txt` and `Back_isected.txt`) are BED-like files containing 9 tab-separated columns, corresponding to information in the `.csv` derived using OligoMiner:
 
 chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&nbsp;&nbsp;region1_PEX5&nbsp;&nbsp;&nbsp;&nbsp;chr12&nbsp;&nbsp;&nbsp;&nbsp;7180812&nbsp;&nbsp;&nbsp;&nbsp;7180851&nbsp;&nbsp;&nbsp;&nbsp;AACTCATGACTTGGATATCGTTACCAAGTGGAGGAAATGG&nbsp;&nbsp;&nbsp;&nbsp;42.06
 
@@ -49,7 +49,7 @@ chr12&nbsp;&nbsp;&nbsp;&nbsp;7180500&nbsp;&nbsp;&nbsp;&nbsp;7214499&nbsp;&nbsp;&
 
 - Col 9:	Tm of each probe (Tm column in OligoMiner output.csv).
 
-This step can be directly done using the custom script `OligoMiner_to_OligoLego.m`, and specifying the OligoMiner output as well as the characteristics of the region in the Custom inputs section.
+This step can be directly done using the custom script `OligoMiner_to_OligoLego.m`, and specifying the _OligoMiner output_ as well as the characteristics of the region in the _Custom inputs_ section.
 
 3. Get streets pool, in this case already available in Streets folder.
 
@@ -58,7 +58,7 @@ This step can be directly done using the custom script `OligoMiner_to_OligoLego.
 5. Get penalty table, again available in Streets folder. This is required to add MS and BS that can be used as PCR primers
 
 6. Use **ApOPs MATLAB** function as follows:
-
+```
 ApOPs(
 	‘MS’, `MS_intersected_file_path.txt`,
 	‘BS’, `BS_intersected_file_path.txt`,
@@ -67,8 +67,9 @@ ApOPs(
 	‘PTable’, `Penalty_table_file_path.txt`,
 	‘SavePath’, `Output_file_path.txt`,
 	‘MaxAvoid’, `Number_to_avoid`,
-	‘SameUniversal’, `Path_to_universal.txt`                                                    );
-
+	‘SameUniversal’, `Path_to_universal.txt`
+      );
+```
 **MaxAvoid** avoids streets that have already been used for other loci to allow simultaneous imaging in different colours. If let’s say “MaxAvoid” “28” is used, then the included streets will be 29 and 30. It also affects the sequences used as Universal primers unless “SameUniversal” is specified.
 
 **SameUniversal** flags the usage of universal primers to amplify an entire library at once. Can be used after a first run has already been done, specifying the path to the `Universal.txt` file from that previous run. Alternatively, the seeding `Universal.txt` file can be manually created specifying the street numbers and sequences from the streets file.
