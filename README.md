@@ -57,22 +57,21 @@ This step can be directly done using the custom script `OligoMiner_to_OligoLego.
 
 5. Get penalty table, again available in Streets folder. This is required to add MS and BS that can be used as PCR primers
 
-6. Use ApOPs MATLAB function as follows:
+6. Use **ApOPs MATLAB** function as follows:
+
 ApOPs(
-	‘MS’, ‘MS_intersected_file_path.txt’,
-	‘BS’, ‘BS_intersected_file_path.txt’,
-	‘Toes’, ‘Toes_file_path.txt’,
-	‘Streets’, ‘Streets_file_path.txt’,
-	‘PTable’, ‘Penalty_table_file_path.txt’,
-	‘SavePath’, ‘Output_file_path.txt’,
-	‘MaxAvoid’, ‘Number_to_avoid’,
-	‘SameUniversal’, ‘Path_to_universal.txt’
-);
+	‘MS’, `MS_intersected_file_path.txt`,
+	‘BS’, `BS_intersected_file_path.txt`,
+	‘Toes’, `Toes_file_path.txt`,
+	‘Streets’, `Streets_file_path.txt`,
+	‘PTable’, `Penalty_table_file_path.txt`,
+	‘SavePath’, `Output_file_path.txt`,
+	‘MaxAvoid’, `Number_to_avoid`,
+	‘SameUniversal’, `Path_to_universal.txt`                                                    );
 
-MaxAvoid avoids streets that have already been used for other loci to allow simultaneous imaging in different colours. If let’s say “MaxAvoid” “28” is used, then the included streets will be 29 and 30. It also affects the sequences used as Universal primers unless “SameUniversal” is specified.
+**MaxAvoid** avoids streets that have already been used for other loci to allow simultaneous imaging in different colours. If let’s say “MaxAvoid” “28” is used, then the included streets will be 29 and 30. It also affects the sequences used as Universal primers unless “SameUniversal” is specified.
 
-SameUniversal flags the usage of universal primers to amplify an entire library at once. Can be used after a first run has already been done, specifying the path to the ‘Universal.txt’ file from that previous run. Alternatively, the seeding ‘Universal.txt’ file can be manually created specifying the street numbers and sequences from the streets file.
-Sequences to order can be extracted from output of OligoLego as follows:
+**SameUniversal** flags the usage of universal primers to amplify an entire library at once. Can be used after a first run has already been done, specifying the path to the `Universal.txt` file from that previous run. Alternatively, the seeding `Universal.txt` file can be manually created specifying the street numbers and sequences from the streets file.
 
 Sequences to order can be extracted from output of OligoLego as follows:
 1. `Oligopaints.txt`: Entire oligopaints library.
