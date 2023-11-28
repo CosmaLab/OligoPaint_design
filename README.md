@@ -54,7 +54,7 @@ This step can be directly done using the custom script `OligoMiner_to_OligoLego.
 
 4. If aiming for case 3, get toeholds, also available in Streets folder.
 
-5. Get penalty table, again available in Streets folder. This is required to add MS and BS that can be used as PCR primers
+5. Get penalty table, again available in Streets folder. This is required to add MS and BS that can be used as PCR primers. In the OligoLego repository, the hg38 penalty table should be unzipped.
 
 6. Use **ApOPs MATLAB** function as follows:
 ```
